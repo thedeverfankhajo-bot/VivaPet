@@ -136,8 +136,9 @@ pets:
 3. تنظیمات پت و Permission آن را به config.yml اضافه کن.
 4. تعریف Client Entity، مدل Geometry و تکسچر همان پت را در Resource Pack اضافه کن.
 5. شناسه‌های PHP و Resource Pack را دقیقاً یکسان نگه دار.
-6. پک را دوباره بساز، نسخهٔ آن را افزایش بده و پس از نصب، سرور را کامل Restart کن.
-7. مدل را با کلاینت Bedrock واقعیِ نسخهٔ مورد استفادهٔ سرور آزمایش کن.
+6. برای ویرایش مدل‌ها ابتدا `python tools/build_resource_pack.py --extract` را اجرا کن؛ فایل‌های استخراج‌شده در `resources/pack/` قرار می‌گیرند. پس از ویرایش JSON/PNGها، `python tools/build_resource_pack.py --build` را اجرا کن تا `resources/VivaPet.mcpack` دوباره ساخته شود.
+7. مقدار version در manifest.json را افزایش بده، فایل پک جدید را هم در بستهٔ افزونه قرار بده و پس از نصب، سرور را کامل Restart کن.
+8. مدل را با کلاینت Bedrock واقعیِ نسخهٔ مورد استفادهٔ سرور آزمایش کن.
 
 عمداً کلاس PHP از config یا ورودی بازیکن به‌صورت پویا بارگذاری نمی‌شود؛ هر شناسه باید صریحاً در allowlist ثبت شود.
 
