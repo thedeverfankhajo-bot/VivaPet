@@ -1,0 +1,51 @@
+settings:
+  auto-summon: true
+  follow-interval-ticks: 2
+  follow-speed: 0.28
+  follow-distance: 1.65
+  teleport-distance: 14.0
+  effect-refresh-ticks: 40
+  effect-duration-ticks: 100
+  resource-pack:
+    auto-install: true
+
+pets:
+  fox:
+    name: "§6Ember Fox"
+    description: "A swift companion that grants Speed."
+    permission: vivapet.pet.fox
+    scale: 0.78
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  dragon:
+    name: "§cMini Dragon"
+    description: "A tiny dragon that grants Fire Resistance and Strength."
+    permission: vivapet.pet.dragon
+    scale: 0.82
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      strength:
+        amplifier: 0
+        visible: false
+  owl:
+    name: "§bMoon Owl"
+    description: "A night companion that grants Night Vision."
+    permission: vivapet.pet.owl
+    scale: 0.82
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+  rabbit:
+    name: "§fCloud Rabbit"
+    description: "A fluffy companion that grants Jump Boost."
+    permission: vivapet.pet.rabbit
+    scale: 0.78
+    effects:
+      jump_boost:
+        amplifier: 1
+        visible: false
