@@ -1,0 +1,38 @@
+name: VivaPet
+main: VivaPet\Main
+version: 1.0.0
+api: 5.0.0
+src-namespace-prefix: "VivaPet"
+author: VivaPet Team
+description: Rank-gated custom companion pets with client-side resource pack models.
+prefix: VivaPet
+
+commands:
+  pet:
+    description: Manage your VivaPet companion.
+    usage: "/pet [list|summon <pet>|remove|info <pet>]"
+    aliases: [pets]
+    permission: vivapet.command
+
+permissions:
+  vivapet.command:
+    description: Allows using the /pet command.
+    default: true
+  vivapet.admin:
+    description: Allows managing VivaPet settings.
+    default: op
+  vivapet.pet.all:
+    description: Unlocks every VivaPet companion.
+    default: false
+  vivapet.pet.fox:
+    description: Unlocks the Ember Fox companion.
+    default: false
+  vivapet.pet.dragon:
+    description: Unlocks the Mini Dragon companion.
+    default: false
+  vivapet.pet.owl:
+    description: Unlocks the Moon Owl companion.
+    default: false
+  vivapet.pet.rabbit:
+    description: Unlocks the Cloud Rabbit companion.
+    default: false
