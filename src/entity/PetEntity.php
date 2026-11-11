@@ -12,7 +12,13 @@ use pocketmine\entity\NeverSavedWithChunkEntity;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 
+/**
+ * A lightweight cosmetic companion. Its network identifier is a built-in
+ * Bedrock actor identifier, so clients render a vanilla model without a pack.
+ */
 abstract class PetEntity extends Living implements NeverSavedWithChunkEntity{
+
+    protected const NETWORK_ID = "minecraft:pig";
 
     public function __construct(
         Location $location,
@@ -30,7 +36,11 @@ abstract class PetEntity extends Living implements NeverSavedWithChunkEntity{
         $this->setNameTag($displayName);
         $this->setNameTagVisible(true);
         $this->setNameTagAlwaysVisible(true);
-        $this->setScale(max(0.35, min(1.5, $scale)));
+        $this->setScale(max(0.20, min(2.0, $scale)));
+    }
+
+    final public static function getNetworkTypeId() : string{
+        return static::NETWORK_ID;
     }
 
     final public function getName() : string{ return $this->displayName; }
@@ -41,7 +51,7 @@ abstract class PetEntity extends Living implements NeverSavedWithChunkEntity{
     final public function canCollideWith(Entity $entity) : bool{ return false; }
 
     final protected function getInitialSizeInfo() : EntitySizeInfo{
-        return new EntitySizeInfo(1.0, 0.72, 0.82);
+        return new EntitySizeInfo(0.95, 0.78, 0.82);
     }
 
     final public function stopMoving() : void{

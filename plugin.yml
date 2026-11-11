@@ -1,38 +1,221 @@
 name: VivaPet
 main: VivaPet\Main
-version: 1.1.0
+version: 2.0.0
 api: 5.0.0
 src-namespace-prefix: "VivaPet"
 author: VivaPet Team
-description: Rank-gated custom companion pets with client-side resource pack models.
+description: Rank-locked companion pets using vanilla Bedrock models; no resource pack required.
 prefix: VivaPet
 
 commands:
   pet:
     description: Manage your VivaPet companion.
-    usage: "/pet [list|summon <pet>|hide|show|toggle|active|remove|info <pet>|reload]"
+    usage: "/pet [help|list [page]|summon <pet>|random|hide|show|toggle|active|remove|info <pet>|reload]"
     aliases: [pets]
     permission: vivapet.command
 
 permissions:
   vivapet.command:
     description: Allows using the /pet command.
-    default: true
+    default: op
   vivapet.admin:
-    description: Allows managing VivaPet settings.
+    description: Allows reloading VivaPet configuration.
     default: op
   vivapet.pet.all:
     description: Unlocks every VivaPet companion.
     default: false
   vivapet.pet.fox:
-    description: Unlocks the Ember Fox companion.
+    description: Unlocks the fox companion.
     default: false
-  vivapet.pet.dragon:
-    description: Unlocks the Mini Dragon companion.
+  vivapet.pet.arctic_fox:
+    description: Unlocks the arctic fox companion.
     default: false
-  vivapet.pet.owl:
-    description: Unlocks the Moon Owl companion.
+  vivapet.pet.raccoon:
+    description: Unlocks the raccoon companion.
+    default: false
+  vivapet.pet.wolf:
+    description: Unlocks the wolf companion.
+    default: false
+  vivapet.pet.husky:
+    description: Unlocks the husky companion.
+    default: false
+  vivapet.pet.cat:
+    description: Unlocks the cat companion.
+    default: false
+  vivapet.pet.lion:
+    description: Unlocks the lion companion.
+    default: false
+  vivapet.pet.tiger:
+    description: Unlocks the tiger companion.
+    default: false
+  vivapet.pet.leopard:
+    description: Unlocks the leopard companion.
     default: false
   vivapet.pet.rabbit:
-    description: Unlocks the Cloud Rabbit companion.
+    description: Unlocks the rabbit companion.
+    default: false
+  vivapet.pet.bunny:
+    description: Unlocks the bunny companion.
+    default: false
+  vivapet.pet.parrot:
+    description: Unlocks the parrot companion.
+    default: false
+  vivapet.pet.owl:
+    description: Unlocks the owl companion.
+    default: false
+  vivapet.pet.eagle:
+    description: Unlocks the eagle companion.
+    default: false
+  vivapet.pet.crow:
+    description: Unlocks the crow companion.
+    default: false
+  vivapet.pet.phoenix:
+    description: Unlocks the phoenix companion.
+    default: false
+  vivapet.pet.bat:
+    description: Unlocks the bat companion.
+    default: false
+  vivapet.pet.bee:
+    description: Unlocks the bee companion.
+    default: false
+  vivapet.pet.panda:
+    description: Unlocks the panda companion.
+    default: false
+  vivapet.pet.red_panda:
+    description: Unlocks the red panda companion.
+    default: false
+  vivapet.pet.axolotl:
+    description: Unlocks the axolotl companion.
+    default: false
+  vivapet.pet.turtle:
+    description: Unlocks the turtle companion.
+    default: false
+  vivapet.pet.sea_turtle:
+    description: Unlocks the sea turtle companion.
+    default: false
+  vivapet.pet.dolphin:
+    description: Unlocks the dolphin companion.
+    default: false
+  vivapet.pet.shark:
+    description: Unlocks the shark companion.
+    default: false
+  vivapet.pet.whale:
+    description: Unlocks the whale companion.
+    default: false
+  vivapet.pet.frog:
+    description: Unlocks the frog companion.
+    default: false
+  vivapet.pet.goat:
+    description: Unlocks the goat companion.
+    default: false
+  vivapet.pet.deer:
+    description: Unlocks the deer companion.
+    default: false
+  vivapet.pet.horse:
+    description: Unlocks the horse companion.
+    default: false
+  vivapet.pet.unicorn:
+    description: Unlocks the unicorn companion.
+    default: false
+  vivapet.pet.griffin:
+    description: Unlocks the griffin companion.
+    default: false
+  vivapet.pet.pegasus:
+    description: Unlocks the pegasus companion.
+    default: false
+  vivapet.pet.camel:
+    description: Unlocks the camel companion.
+    default: false
+  vivapet.pet.sniffer:
+    description: Unlocks the sniffer companion.
+    default: false
+  vivapet.pet.dinosaur:
+    description: Unlocks the dinosaur companion.
+    default: false
+  vivapet.pet.allay:
+    description: Unlocks the allay companion.
+    default: false
+  vivapet.pet.armadillo:
+    description: Unlocks the armadillo companion.
+    default: false
+  vivapet.pet.hedgehog:
+    description: Unlocks the hedgehog companion.
+    default: false
+  vivapet.pet.chicken:
+    description: Unlocks the chicken companion.
+    default: false
+  vivapet.pet.penguin:
+    description: Unlocks the penguin companion.
+    default: false
+  vivapet.pet.cow:
+    description: Unlocks the cow companion.
+    default: false
+  vivapet.pet.pig:
+    description: Unlocks the pig companion.
+    default: false
+  vivapet.pet.sheep:
+    description: Unlocks the sheep companion.
+    default: false
+  vivapet.pet.ocelot:
+    description: Unlocks the ocelot companion.
+    default: false
+  vivapet.pet.mooshroom:
+    description: Unlocks the mooshroom companion.
+    default: false
+  vivapet.pet.polar_bear:
+    description: Unlocks the polar bear companion.
+    default: false
+  vivapet.pet.llama:
+    description: Unlocks the llama companion.
+    default: false
+  vivapet.pet.squid:
+    description: Unlocks the squid companion.
+    default: false
+  vivapet.pet.dragon:
+    description: Unlocks the dragon companion.
+    default: false
+  vivapet.pet.slime:
+    description: Unlocks the slime companion.
+    default: false
+  vivapet.pet.phantom:
+    description: Unlocks the phantom companion.
+    default: false
+  vivapet.pet.blaze:
+    description: Unlocks the blaze companion.
+    default: false
+  vivapet.pet.ghast:
+    description: Unlocks the ghast companion.
+    default: false
+  vivapet.pet.snow_golem:
+    description: Unlocks the snow golem companion.
+    default: false
+  vivapet.pet.pufferfish:
+    description: Unlocks the pufferfish companion.
+    default: false
+  vivapet.pet.cod:
+    description: Unlocks the cod companion.
+    default: false
+  vivapet.pet.salmon:
+    description: Unlocks the salmon companion.
+    default: false
+  vivapet.pet.tropical_fish:
+    description: Unlocks the tropical fish companion.
+    default: false
+  vivapet.pet.tadpole:
+    description: Unlocks the tadpole companion.
+    default: false
+  vivapet.pet.strider:
+    description: Unlocks the strider companion.
+    default: false
+  vivapet.pet.donkey:
+    description: Unlocks the donkey companion.
+    default: false
+  vivapet.pet.mule:
+    description: Unlocks the mule companion.
+    default: false
+  vivapet.pet.skeleton_horse:
+    description: Unlocks the skeleton horse companion.
+    default: false
+  vivapet.pet.zombie_horse:
+    description: Unlocks the zombie horse companion.
     default: false

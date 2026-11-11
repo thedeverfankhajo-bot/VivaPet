@@ -5,3 +5,6 @@
 .vscode/
 .DS_Store
 *.log
+/build/
+*.phar
+*.mcpack

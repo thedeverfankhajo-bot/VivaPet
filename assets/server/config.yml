@@ -1,0 +1,846 @@
+settings:
+  auto-summon: true
+  follow-interval-ticks: 2
+  follow-speed: 0.28
+  follow-distance: 1.65
+  follow-offset: 1.55
+  follow-height-offset: 0.05
+  teleport-distance: 14.0
+  effect-refresh-ticks: 40
+  effect-duration-ticks: 100
+  aura-interval-ticks: 10
+  visibility: all
+
+pets:
+  fox:
+    name: "§6Ember Fox"
+    description: "Rank companion pet. Uses vanilla fox model."
+    permission: vivapet.pet.fox
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  arctic_fox:
+    name: "§fArctic Fox"
+    description: "Rank companion pet. Uses vanilla fox model."
+    permission: vivapet.pet.arctic_fox
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+  raccoon:
+    name: "§8Midnight Raccoon"
+    description: "Rank companion pet. Uses vanilla fox model."
+    permission: vivapet.pet.raccoon
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+  wolf:
+    name: "§7Guardian Wolf"
+    description: "Rank companion pet. Uses vanilla wolf model."
+    permission: vivapet.pet.wolf
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+  husky:
+    name: "§bSnow Husky"
+    description: "Rank companion pet. Uses vanilla wolf model."
+    permission: vivapet.pet.husky
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  cat:
+    name: "§dMystic Cat"
+    description: "Rank companion pet. Uses vanilla cat model."
+    permission: vivapet.pet.cat
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+      jump_boost:
+        amplifier: 0
+        visible: false
+  lion:
+    name: "§6Savannah Lion"
+    description: "Rank companion pet. Uses vanilla cat model."
+    permission: vivapet.pet.lion
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  tiger:
+    name: "§cJungle Tiger"
+    description: "Rank companion pet. Uses vanilla cat model."
+    permission: vivapet.pet.tiger
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+  leopard:
+    name: "§eGolden Leopard"
+    description: "Rank companion pet. Uses vanilla cat model."
+    permission: vivapet.pet.leopard
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  rabbit:
+    name: "§fCloud Rabbit"
+    description: "Rank companion pet. Uses vanilla rabbit model."
+    permission: vivapet.pet.rabbit
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+  bunny:
+    name: "§dCotton Bunny"
+    description: "Rank companion pet. Uses vanilla rabbit model."
+    permission: vivapet.pet.bunny
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  parrot:
+    name: "§aTropical Parrot"
+    description: "Rank companion pet. Uses vanilla parrot model."
+    permission: vivapet.pet.parrot
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+  owl:
+    name: "§bMoon Owl"
+    description: "Rank companion pet. Uses vanilla parrot model."
+    permission: vivapet.pet.owl
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+  eagle:
+    name: "§6Sky Eagle"
+    description: "Rank companion pet. Uses vanilla parrot model."
+    permission: vivapet.pet.eagle
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  crow:
+    name: "§8Shadow Crow"
+    description: "Rank companion pet. Uses vanilla parrot model."
+    permission: vivapet.pet.crow
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+  phoenix:
+    name: "§cSolar Phoenix"
+    description: "Rank companion pet. Uses vanilla parrot model."
+    permission: vivapet.pet.phoenix
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      strength:
+        amplifier: 0
+        visible: false
+  bat:
+    name: "§5Cave Bat"
+    description: "Rank companion pet. Uses vanilla bat model."
+    permission: vivapet.pet.bat
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+  bee:
+    name: "§eHoney Bee"
+    description: "Rank companion pet. Uses vanilla bee model."
+    permission: vivapet.pet.bee
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      haste:
+        amplifier: 0
+        visible: false
+      regeneration:
+        amplifier: 0
+        visible: false
+  panda:
+    name: "§fBamboo Panda"
+    description: "Rank companion pet. Uses vanilla panda model."
+    permission: vivapet.pet.panda
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+  red_panda:
+    name: "§6Autumn Red Panda"
+    description: "Rank companion pet. Uses vanilla panda model."
+    permission: vivapet.pet.red_panda
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  axolotl:
+    name: "§dAmethyst Axolotl"
+    description: "Rank companion pet. Uses vanilla axolotl model."
+    permission: vivapet.pet.axolotl
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+      water_breathing:
+        amplifier: 0
+        visible: false
+  turtle:
+    name: "§aAncient Turtle"
+    description: "Rank companion pet. Uses vanilla turtle model."
+    permission: vivapet.pet.turtle
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+      water_breathing:
+        amplifier: 0
+        visible: false
+  sea_turtle:
+    name: "§2Sea Turtle"
+    description: "Rank companion pet. Uses vanilla turtle model."
+    permission: vivapet.pet.sea_turtle
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  dolphin:
+    name: "§bOcean Dolphin"
+    description: "Rank companion pet. Uses vanilla dolphin model."
+    permission: vivapet.pet.dolphin
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+      water_breathing:
+        amplifier: 0
+        visible: false
+  shark:
+    name: "§9Reef Shark"
+    description: "Rank companion pet. Uses vanilla dolphin model."
+    permission: vivapet.pet.shark
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+      water_breathing:
+        amplifier: 0
+        visible: false
+  whale:
+    name: "§3Little Whale"
+    description: "Rank companion pet. Uses vanilla dolphin model."
+    permission: vivapet.pet.whale
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+      water_breathing:
+        amplifier: 0
+        visible: false
+  frog:
+    name: "§aMeadow Frog"
+    description: "Rank companion pet. Uses vanilla frog model."
+    permission: vivapet.pet.frog
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+  goat:
+    name: "§fMountain Goat"
+    description: "Rank companion pet. Uses vanilla goat model."
+    permission: vivapet.pet.goat
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  deer:
+    name: "§6Forest Deer"
+    description: "Rank companion pet. Uses vanilla goat model."
+    permission: vivapet.pet.deer
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  horse:
+    name: "§6Royal Horse"
+    description: "Rank companion pet. Uses vanilla horse model."
+    permission: vivapet.pet.horse
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+      jump_boost:
+        amplifier: 0
+        visible: false
+  unicorn:
+    name: "§dDream Unicorn"
+    description: "Rank companion pet. Uses vanilla horse model."
+    permission: vivapet.pet.unicorn
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  griffin:
+    name: "§eGolden Griffin"
+    description: "Rank companion pet. Uses vanilla horse model."
+    permission: vivapet.pet.griffin
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  pegasus:
+    name: "§fCloud Pegasus"
+    description: "Rank companion pet. Uses vanilla phantom model."
+    permission: vivapet.pet.pegasus
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  camel:
+    name: "§6Desert Camel"
+    description: "Rank companion pet. Uses vanilla camel model."
+    permission: vivapet.pet.camel
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+      health_boost:
+        amplifier: 0
+        visible: false
+  sniffer:
+    name: "§2Ancient Sniffer"
+    description: "Rank companion pet. Uses vanilla sniffer model."
+    permission: vivapet.pet.sniffer
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+  dinosaur:
+    name: "§aTiny Dinosaur"
+    description: "Rank companion pet. Uses vanilla sniffer model."
+    permission: vivapet.pet.dinosaur
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  allay:
+    name: "§bTwilight Allay"
+    description: "Rank companion pet. Uses vanilla allay model."
+    permission: vivapet.pet.allay
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      night_vision:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  armadillo:
+    name: "§6Desert Armadillo"
+    description: "Rank companion pet. Uses vanilla armadillo model."
+    permission: vivapet.pet.armadillo
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+  hedgehog:
+    name: "§eLittle Hedgehog"
+    description: "Rank companion pet. Uses vanilla armadillo model."
+    permission: vivapet.pet.hedgehog
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+  chicken:
+    name: "§fPocket Chicken"
+    description: "Rank companion pet. Uses vanilla chicken model."
+    permission: vivapet.pet.chicken
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+  penguin:
+    name: "§bFrost Penguin"
+    description: "Rank companion pet. Uses vanilla chicken model."
+    permission: vivapet.pet.penguin
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  cow:
+    name: "§fMilk Cow"
+    description: "Rank companion pet. Uses vanilla cow model."
+    permission: vivapet.pet.cow
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      health_boost:
+        amplifier: 0
+        visible: false
+      absorption:
+        amplifier: 0
+        visible: false
+  pig:
+    name: "§dLucky Pig"
+    description: "Rank companion pet. Uses vanilla pig model."
+    permission: vivapet.pet.pig
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+      absorption:
+        amplifier: 0
+        visible: false
+  sheep:
+    name: "§fWoolly Sheep"
+    description: "Rank companion pet. Uses vanilla sheep model."
+    permission: vivapet.pet.sheep
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+  ocelot:
+    name: "§eJungle Ocelot"
+    description: "Rank companion pet. Uses vanilla ocelot model."
+    permission: vivapet.pet.ocelot
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+  mooshroom:
+    name: "§cMushroom Cow"
+    description: "Rank companion pet. Uses vanilla mooshroom model."
+    permission: vivapet.pet.mooshroom
+    scale: 1
+    aura: heart
+    name-tag-visible: true
+    effects:
+      regeneration:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  polar_bear:
+    name: "§fFrost Bear"
+    description: "Rank companion pet. Uses vanilla polar_bear model."
+    permission: vivapet.pet.polar_bear
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+      strength:
+        amplifier: 0
+        visible: false
+  llama:
+    name: "§6Caravan Llama"
+    description: "Rank companion pet. Uses vanilla llama model."
+    permission: vivapet.pet.llama
+    scale: 1
+    aura: villager
+    name-tag-visible: true
+    effects:
+      health_boost:
+        amplifier: 0
+        visible: false
+  squid:
+    name: "§9Deep Squid"
+    description: "Rank companion pet. Uses vanilla squid model."
+    permission: vivapet.pet.squid
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      conduit_power:
+        amplifier: 0
+        visible: false
+  dragon:
+    name: "§cMini Ender Dragon"
+    description: "Rank companion pet. Uses vanilla ender_dragon model."
+    permission: vivapet.pet.dragon
+    scale: 0.22
+    aura: flame
+    name-tag-visible: true
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      strength:
+        amplifier: 0
+        visible: false
+  slime:
+    name: "§aJelly Slime"
+    description: "Rank companion pet. Uses vanilla slime model."
+    permission: vivapet.pet.slime
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      jump_boost:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  phantom:
+    name: "§5Night Phantom"
+    description: "Rank companion pet. Uses vanilla phantom model."
+    permission: vivapet.pet.phantom
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+      jump_boost:
+        amplifier: 0
+        visible: false
+  blaze:
+    name: "§6Tiny Blaze"
+    description: "Rank companion pet. Uses vanilla blaze model."
+    permission: vivapet.pet.blaze
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      haste:
+        amplifier: 0
+        visible: false
+  ghast:
+    name: "§fPocket Ghast"
+    description: "Rank companion pet. Uses vanilla ghast model."
+    permission: vivapet.pet.ghast
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  snow_golem:
+    name: "§fSnow Buddy"
+    description: "Rank companion pet. Uses vanilla snow_golem model."
+    permission: vivapet.pet.snow_golem
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      resistance:
+        amplifier: 0
+        visible: false
+  pufferfish:
+    name: "§ePuff Ball"
+    description: "Rank companion pet. Uses vanilla pufferfish model."
+    permission: vivapet.pet.pufferfish
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      absorption:
+        amplifier: 0
+        visible: false
+  cod:
+    name: "§7Silver Cod"
+    description: "Rank companion pet. Uses vanilla cod model."
+    permission: vivapet.pet.cod
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+  salmon:
+    name: "§cRiver Salmon"
+    description: "Rank companion pet. Uses vanilla salmon model."
+    permission: vivapet.pet.salmon
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  tropical_fish:
+    name: "§dCoral Fish"
+    description: "Rank companion pet. Uses vanilla tropicalfish model."
+    permission: vivapet.pet.tropical_fish
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      conduit_power:
+        amplifier: 0
+        visible: false
+  tadpole:
+    name: "§aTiny Tadpole"
+    description: "Rank companion pet. Uses vanilla tadpole model."
+    permission: vivapet.pet.tadpole
+    scale: 1
+    aura: bubble
+    name-tag-visible: true
+    effects:
+      water_breathing:
+        amplifier: 0
+        visible: false
+      jump_boost:
+        amplifier: 0
+        visible: false
+  strider:
+    name: "§cLava Strider"
+    description: "Rank companion pet. Uses vanilla strider model."
+    permission: vivapet.pet.strider
+    scale: 1
+    aura: flame
+    name-tag-visible: true
+    effects:
+      fire_resistance:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  donkey:
+    name: "§7Pack Donkey"
+    description: "Rank companion pet. Uses vanilla donkey model."
+    permission: vivapet.pet.donkey
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      health_boost:
+        amplifier: 0
+        visible: false
+  mule:
+    name: "§6Trail Mule"
+    description: "Rank companion pet. Uses vanilla mule model."
+    permission: vivapet.pet.mule
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      health_boost:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false
+  skeleton_horse:
+    name: "§fBone Steed"
+    description: "Rank companion pet. Uses vanilla skeleton_horse model."
+    permission: vivapet.pet.skeleton_horse
+    scale: 1
+    aura: portal
+    name-tag-visible: true
+    effects:
+      speed:
+        amplifier: 0
+        visible: false
+      resistance:
+        amplifier: 0
+        visible: false
+  zombie_horse:
+    name: "§2Cursed Steed"
+    description: "Rank companion pet. Uses vanilla zombie_horse model."
+    permission: vivapet.pet.zombie_horse
+    scale: 1
+    aura: smoke
+    name-tag-visible: true
+    effects:
+      strength:
+        amplifier: 0
+        visible: false
+      speed:
+        amplifier: 0
+        visible: false

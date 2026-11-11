@@ -1,6 +1,6 @@
 {
   "name": "vivapet/vivapet",
-  "description": "Rank-gated custom companion pets for PocketMine-MP API 5",
+  "description": "Rank-locked cosmetic companion pets for PocketMine-MP API 5 using vanilla Bedrock actor models",
   "type": "project",
   "license": "MIT",
   "require": {

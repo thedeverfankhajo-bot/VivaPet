@@ -19,7 +19,12 @@ final class PlayerListener implements Listener{
     public function __construct(private readonly Main $plugin){}
 
     public function onJoin(PlayerJoinEvent $event) : void{
-        $this->plugin->getPetManager()->handleJoin($event->getPlayer());
+        $player = $event->getPlayer();
+        $this->plugin->getScheduler()->scheduleDelayedTask(new ClosureTask(function() use ($player) : void{
+            if($player->isOnline()){
+                $this->plugin->getPetManager()->handleJoin($player);
+            }
+        }), 1);
     }
 
     public function onQuit(PlayerQuitEvent $event) : void{

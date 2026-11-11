@@ -1,0 +1,332 @@
+{
+  "version": "2.0.0",
+  "requires_resource_pack": false,
+  "pet_count": 65,
+  "pets": [
+    {
+      "id": "fox",
+      "permission": "vivapet.pet.fox",
+      "bedrock_actor_id": "minecraft:fox"
+    },
+    {
+      "id": "arctic_fox",
+      "permission": "vivapet.pet.arctic_fox",
+      "bedrock_actor_id": "minecraft:fox"
+    },
+    {
+      "id": "raccoon",
+      "permission": "vivapet.pet.raccoon",
+      "bedrock_actor_id": "minecraft:fox"
+    },
+    {
+      "id": "wolf",
+      "permission": "vivapet.pet.wolf",
+      "bedrock_actor_id": "minecraft:wolf"
+    },
+    {
+      "id": "husky",
+      "permission": "vivapet.pet.husky",
+      "bedrock_actor_id": "minecraft:wolf"
+    },
+    {
+      "id": "cat",
+      "permission": "vivapet.pet.cat",
+      "bedrock_actor_id": "minecraft:cat"
+    },
+    {
+      "id": "lion",
+      "permission": "vivapet.pet.lion",
+      "bedrock_actor_id": "minecraft:cat"
+    },
+    {
+      "id": "tiger",
+      "permission": "vivapet.pet.tiger",
+      "bedrock_actor_id": "minecraft:cat"
+    },
+    {
+      "id": "leopard",
+      "permission": "vivapet.pet.leopard",
+      "bedrock_actor_id": "minecraft:cat"
+    },
+    {
+      "id": "rabbit",
+      "permission": "vivapet.pet.rabbit",
+      "bedrock_actor_id": "minecraft:rabbit"
+    },
+    {
+      "id": "bunny",
+      "permission": "vivapet.pet.bunny",
+      "bedrock_actor_id": "minecraft:rabbit"
+    },
+    {
+      "id": "parrot",
+      "permission": "vivapet.pet.parrot",
+      "bedrock_actor_id": "minecraft:parrot"
+    },
+    {
+      "id": "owl",
+      "permission": "vivapet.pet.owl",
+      "bedrock_actor_id": "minecraft:parrot"
+    },
+    {
+      "id": "eagle",
+      "permission": "vivapet.pet.eagle",
+      "bedrock_actor_id": "minecraft:parrot"
+    },
+    {
+      "id": "crow",
+      "permission": "vivapet.pet.crow",
+      "bedrock_actor_id": "minecraft:parrot"
+    },
+    {
+      "id": "phoenix",
+      "permission": "vivapet.pet.phoenix",
+      "bedrock_actor_id": "minecraft:parrot"
+    },
+    {
+      "id": "bat",
+      "permission": "vivapet.pet.bat",
+      "bedrock_actor_id": "minecraft:bat"
+    },
+    {
+      "id": "bee",
+      "permission": "vivapet.pet.bee",
+      "bedrock_actor_id": "minecraft:bee"
+    },
+    {
+      "id": "panda",
+      "permission": "vivapet.pet.panda",
+      "bedrock_actor_id": "minecraft:panda"
+    },
+    {
+      "id": "red_panda",
+      "permission": "vivapet.pet.red_panda",
+      "bedrock_actor_id": "minecraft:panda"
+    },
+    {
+      "id": "axolotl",
+      "permission": "vivapet.pet.axolotl",
+      "bedrock_actor_id": "minecraft:axolotl"
+    },
+    {
+      "id": "turtle",
+      "permission": "vivapet.pet.turtle",
+      "bedrock_actor_id": "minecraft:turtle"
+    },
+    {
+      "id": "sea_turtle",
+      "permission": "vivapet.pet.sea_turtle",
+      "bedrock_actor_id": "minecraft:turtle"
+    },
+    {
+      "id": "dolphin",
+      "permission": "vivapet.pet.dolphin",
+      "bedrock_actor_id": "minecraft:dolphin"
+    },
+    {
+      "id": "shark",
+      "permission": "vivapet.pet.shark",
+      "bedrock_actor_id": "minecraft:dolphin"
+    },
+    {
+      "id": "whale",
+      "permission": "vivapet.pet.whale",
+      "bedrock_actor_id": "minecraft:dolphin"
+    },
+    {
+      "id": "frog",
+      "permission": "vivapet.pet.frog",
+      "bedrock_actor_id": "minecraft:frog"
+    },
+    {
+      "id": "goat",
+      "permission": "vivapet.pet.goat",
+      "bedrock_actor_id": "minecraft:goat"
+    },
+    {
+      "id": "deer",
+      "permission": "vivapet.pet.deer",
+      "bedrock_actor_id": "minecraft:goat"
+    },
+    {
+      "id": "horse",
+      "permission": "vivapet.pet.horse",
+      "bedrock_actor_id": "minecraft:horse"
+    },
+    {
+      "id": "unicorn",
+      "permission": "vivapet.pet.unicorn",
+      "bedrock_actor_id": "minecraft:horse"
+    },
+    {
+      "id": "griffin",
+      "permission": "vivapet.pet.griffin",
+      "bedrock_actor_id": "minecraft:horse"
+    },
+    {
+      "id": "pegasus",
+      "permission": "vivapet.pet.pegasus",
+      "bedrock_actor_id": "minecraft:phantom"
+    },
+    {
+      "id": "camel",
+      "permission": "vivapet.pet.camel",
+      "bedrock_actor_id": "minecraft:camel"
+    },
+    {
+      "id": "sniffer",
+      "permission": "vivapet.pet.sniffer",
+      "bedrock_actor_id": "minecraft:sniffer"
+    },
+    {
+      "id": "dinosaur",
+      "permission": "vivapet.pet.dinosaur",
+      "bedrock_actor_id": "minecraft:sniffer"
+    },
+    {
+      "id": "allay",
+      "permission": "vivapet.pet.allay",
+      "bedrock_actor_id": "minecraft:allay"
+    },
+    {
+      "id": "armadillo",
+      "permission": "vivapet.pet.armadillo",
+      "bedrock_actor_id": "minecraft:armadillo"
+    },
+    {
+      "id": "hedgehog",
+      "permission": "vivapet.pet.hedgehog",
+      "bedrock_actor_id": "minecraft:armadillo"
+    },
+    {
+      "id": "chicken",
+      "permission": "vivapet.pet.chicken",
+      "bedrock_actor_id": "minecraft:chicken"
+    },
+    {
+      "id": "penguin",
+      "permission": "vivapet.pet.penguin",
+      "bedrock_actor_id": "minecraft:chicken"
+    },
+    {
+      "id": "cow",
+      "permission": "vivapet.pet.cow",
+      "bedrock_actor_id": "minecraft:cow"
+    },
+    {
+      "id": "pig",
+      "permission": "vivapet.pet.pig",
+      "bedrock_actor_id": "minecraft:pig"
+    },
+    {
+      "id": "sheep",
+      "permission": "vivapet.pet.sheep",
+      "bedrock_actor_id": "minecraft:sheep"
+    },
+    {
+      "id": "ocelot",
+      "permission": "vivapet.pet.ocelot",
+      "bedrock_actor_id": "minecraft:ocelot"
+    },
+    {
+      "id": "mooshroom",
+      "permission": "vivapet.pet.mooshroom",
+      "bedrock_actor_id": "minecraft:mooshroom"
+    },
+    {
+      "id": "polar_bear",
+      "permission": "vivapet.pet.polar_bear",
+      "bedrock_actor_id": "minecraft:polar_bear"
+    },
+    {
+      "id": "llama",
+      "permission": "vivapet.pet.llama",
+      "bedrock_actor_id": "minecraft:llama"
+    },
+    {
+      "id": "squid",
+      "permission": "vivapet.pet.squid",
+      "bedrock_actor_id": "minecraft:squid"
+    },
+    {
+      "id": "dragon",
+      "permission": "vivapet.pet.dragon",
+      "bedrock_actor_id": "minecraft:ender_dragon"
+    },
+    {
+      "id": "slime",
+      "permission": "vivapet.pet.slime",
+      "bedrock_actor_id": "minecraft:slime"
+    },
+    {
+      "id": "phantom",
+      "permission": "vivapet.pet.phantom",
+      "bedrock_actor_id": "minecraft:phantom"
+    },
+    {
+      "id": "blaze",
+      "permission": "vivapet.pet.blaze",
+      "bedrock_actor_id": "minecraft:blaze"
+    },
+    {
+      "id": "ghast",
+      "permission": "vivapet.pet.ghast",
+      "bedrock_actor_id": "minecraft:ghast"
+    },
+    {
+      "id": "snow_golem",
+      "permission": "vivapet.pet.snow_golem",
+      "bedrock_actor_id": "minecraft:snow_golem"
+    },
+    {
+      "id": "pufferfish",
+      "permission": "vivapet.pet.pufferfish",
+      "bedrock_actor_id": "minecraft:pufferfish"
+    },
+    {
+      "id": "cod",
+      "permission": "vivapet.pet.cod",
+      "bedrock_actor_id": "minecraft:cod"
+    },
+    {
+      "id": "salmon",
+      "permission": "vivapet.pet.salmon",
+      "bedrock_actor_id": "minecraft:salmon"
+    },
+    {
+      "id": "tropical_fish",
+      "permission": "vivapet.pet.tropical_fish",
+      "bedrock_actor_id": "minecraft:tropicalfish"
+    },
+    {
+      "id": "tadpole",
+      "permission": "vivapet.pet.tadpole",
+      "bedrock_actor_id": "minecraft:tadpole"
+    },
+    {
+      "id": "strider",
+      "permission": "vivapet.pet.strider",
+      "bedrock_actor_id": "minecraft:strider"
+    },
+    {
+      "id": "donkey",
+      "permission": "vivapet.pet.donkey",
+      "bedrock_actor_id": "minecraft:donkey"
+    },
+    {
+      "id": "mule",
+      "permission": "vivapet.pet.mule",
+      "bedrock_actor_id": "minecraft:mule"
+    },
+    {
+      "id": "skeleton_horse",
+      "permission": "vivapet.pet.skeleton_horse",
+      "bedrock_actor_id": "minecraft:skeleton_horse"
+    },
+    {
+      "id": "zombie_horse",
+      "permission": "vivapet.pet.zombie_horse",
+      "bedrock_actor_id": "minecraft:zombie_horse"
+    }
+  ]
+}
