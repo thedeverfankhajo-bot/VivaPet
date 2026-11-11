@@ -1,6 +1,6 @@
 name: VivaPet
 main: VivaPet\Main
-version: 1.0.0
+version: 1.1.0
 api: 5.0.0
 src-namespace-prefix: "VivaPet"
 author: VivaPet Team
@@ -10,7 +10,7 @@ prefix: VivaPet
 commands:
   pet:
     description: Manage your VivaPet companion.
-    usage: "/pet [list|summon <pet>|remove|info <pet>]"
+    usage: "/pet [list|summon <pet>|hide|show|toggle|active|remove|info <pet>|reload]"
     aliases: [pets]
     permission: vivapet.command
 

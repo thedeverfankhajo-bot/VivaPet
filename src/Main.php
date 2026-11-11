@@ -27,7 +27,7 @@ final class Main extends PluginBase{
             $this->petManager->tick();
         }), $interval);
 
-        $this->getLogger()->info("VivaPet 1.0.0 enabled.");
+        $this->getLogger()->info("VivaPet 1.1.0 enabled.");
     }
 
     protected function onDisable() : void{
@@ -67,7 +67,11 @@ final class Main extends PluginBase{
             case "help":
                 $sender->sendMessage("§6VivaPet §7» §f/pet list");
                 $sender->sendMessage("§7/pet summon <pet> §8- §fSummon a companion");
-                $sender->sendMessage("§7/pet remove §8- §fRemove your companion");
+                $sender->sendMessage("§7/pet hide §8- §fHide your companion temporarily");
+                $sender->sendMessage("§7/pet show §8- §fSpawn your selected companion");
+                $sender->sendMessage("§7/pet toggle §8- §fHide or show your selected companion");
+                $sender->sendMessage("§7/pet active §8- §fView your selected/active companion");
+                $sender->sendMessage("§7/pet remove §8- §fRemove your companion and forget the selection");
                 $sender->sendMessage("§7/pet info <pet> §8- §fView pet details");
                 break;
 
@@ -98,10 +102,59 @@ final class Main extends PluginBase{
                 }
                 break;
 
+            case "hide":
+                if($this->petManager->hide($sender)){
+                    $sender->sendMessage("§eYour companion is hidden. Use §f/pet show §eto bring it back.");
+                }else{
+                    $sender->sendMessage("§cYou do not have an active companion.");
+                }
+                break;
+
+            case "show":
+                $this->sendShowResult($sender, $this->petManager->showSelected($sender));
+                break;
+
+            case "toggle":
+                if($this->petManager->getActivePetId($sender) !== null){
+                    $this->petManager->hide($sender);
+                    $sender->sendMessage("§eYour companion is hidden. Use §f/pet show §eto bring it back.");
+                }else{
+                    $this->sendShowResult($sender, $this->petManager->showSelected($sender));
+                }
+                break;
+
+            case "active":
+            case "status":
+                $activePetId = $this->petManager->getActivePetId($sender);
+                $selectedPetId = $this->petManager->getSelectedPetId($sender);
+                $petId = $activePetId ?? $selectedPetId;
+                if($petId === null){
+                    $sender->sendMessage("§7You have no selected companion. Use §f/pet list§7.");
+                    break;
+                }
+                $definition = $this->petManager->getPetDefinition($petId);
+                $name = is_array($definition) && is_string($definition["name"] ?? null) ? $definition["name"] : ucfirst($petId);
+                if($activePetId !== null){
+                    $sender->sendMessage("§aActive companion: §f" . $name . " §7(" . $petId . ")");
+                }elseif(!$this->petManager->hasPetPermission($sender, $petId)){
+                    $sender->sendMessage("§cYour saved companion is currently locked by your rank: §f" . $name);
+                    $sender->sendMessage("§7The saved choice will be available again when the required permission is restored.");
+                }else{
+                    $sender->sendMessage("§eSelected companion is hidden: §f" . $name . " §7(" . $petId . ")");
+                    $sender->sendMessage("§7Use §f/pet show §7to spawn it again.");
+                }
+                break;
+
             case "remove":
             case "despawn":
+                $hadSelection = $this->petManager->getSelectedPetId($sender) !== null;
+                $wasActive = $this->petManager->getActivePetId($sender) !== null;
                 $this->petManager->remove($sender, true);
-                $sender->sendMessage("§eYour companion has been removed.");
+                if($hadSelection || $wasActive){
+                    $sender->sendMessage("§eYour companion was removed and its selection was cleared.");
+                }else{
+                    $sender->sendMessage("§7You did not have a selected companion.");
+                }
                 break;
 
             case "info":
@@ -114,8 +167,13 @@ final class Main extends PluginBase{
                 $name = is_string($definition["name"] ?? null) ? $definition["name"] : ucfirst($petId);
                 $description = is_string($definition["description"] ?? null) ? $definition["description"] : "No description.";
                 $access = $this->petManager->hasPetPermission($sender, $petId) ? "§aUnlocked" : "§cLocked";
+                $permission = $definition["permission"] ?? ("vivapet.pet." . $petId);
+                if(!is_string($permission) || !preg_match('/^[a-zA-Z0-9._-]{1,96}$/D', $permission)){
+                    $permission = "invalid configuration";
+                }
                 $sender->sendMessage("§6" . $name . " §7- " . $access);
                 $sender->sendMessage("§7" . $description);
+                $sender->sendMessage("§7Required permission: §f" . $permission);
                 break;
 
             default:
@@ -125,18 +183,49 @@ final class Main extends PluginBase{
         return true;
     }
 
+    private function sendShowResult(\pocketmine\player\Player $player, string $result) : void{
+        switch($result){
+            case "ok":
+                $player->sendMessage("§aYour selected companion has been summoned.");
+                break;
+            case "denied":
+                $player->sendMessage("§cYour current rank does not unlock the selected pet.");
+                break;
+            case "none":
+                $player->sendMessage("§7You have no saved pet selection. Use §f/pet list§7 and summon one.");
+                break;
+            case "unknown":
+                $player->sendMessage("§cYour saved pet is no longer configured. Choose another pet with /pet list.");
+                break;
+            default:
+                $player->sendMessage("§cThe selected pet could not be summoned.");
+                break;
+        }
+    }
+
     private function sendPetList(\pocketmine\player\Player $player) : void{
         $player->sendMessage("§6───── §eVivaPet companions §6─────");
+        $activePetId = $this->petManager->getActivePetId($player);
+        $selectedPetId = $this->petManager->getSelectedPetId($player);
         foreach($this->petManager->getPetIds() as $petId){
             $definition = $this->petManager->getPetDefinition($petId);
             if($definition === null){
                 continue;
             }
             $name = is_string($definition["name"] ?? null) ? $definition["name"] : ucfirst($petId);
-            $status = $this->petManager->hasPetPermission($player, $petId) ? "§aUnlocked" : "§cRank required";
+            if(!$this->petManager->hasPetPermission($player, $petId)){
+                $status = "§cRank required";
+            }elseif($activePetId === $petId){
+                $status = "§aFollowing you";
+            }elseif($selectedPetId === $petId){
+                $status = "§eSelected (hidden)";
+            }else{
+                $status = "§aUnlocked";
+            }
             $player->sendMessage("§7• " . $name . " §8(" . $petId . ") §7- " . $status);
         }
-        $player->sendMessage("§7Summon one with: §f/pet summon <pet>");
+        $player->sendMessage("§7Summon: §f/pet summon <pet> §8| §7Hide: §f/pet hide §8| §7Show: §f/pet show");
+        $player->sendMessage("§7Clear your saved choice with: §f/pet remove");
     }
 
     private function installResourcePack() : void{

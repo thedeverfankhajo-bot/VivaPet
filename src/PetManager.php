@@ -71,6 +71,51 @@ final class PetManager{
         return is_array($pets) && isset($pets[$petId]) && is_array($pets[$petId]) ? $pets[$petId] : null;
     }
 
+    public function getSelectedPetId(Player $player) : ?string{
+        $saved = $this->playerData->get($player->getUniqueId()->toString(), null);
+        if(!is_string($saved) || $saved === "" || $this->getPetDefinition($saved) === null){
+            return null;
+        }
+        return $saved;
+    }
+
+    public function getActivePetId(Player $player) : ?string{
+        $uuid = $player->getUniqueId()->toString();
+        if(!isset($this->activePets[$uuid])){
+            return null;
+        }
+        $state = $this->activePets[$uuid];
+        if(!$state["player"]->isOnline() || $state["pet"]->isClosed() || !$state["pet"]->isAlive()){
+            return null;
+        }
+        return $state["petId"];
+    }
+
+    /**
+     * Hides the currently spawned companion without forgetting the player's selection.
+     * @return bool True if an active pet entry was removed.
+     */
+    public function hide(Player $player) : bool{
+        $uuid = $player->getUniqueId()->toString();
+        if(!isset($this->activePets[$uuid])){
+            return false;
+        }
+        $this->removeActiveByUuid($uuid);
+        return true;
+    }
+
+    /** @return "ok"|"none"|"unknown"|"denied"|"offline" */
+    public function showSelected(Player $player) : string{
+        $saved = $this->playerData->get($player->getUniqueId()->toString(), null);
+        if(!is_string($saved) || $saved === ""){
+            return "none";
+        }
+        if($this->getPetDefinition($saved) === null){
+            return "unknown";
+        }
+        return $this->summon($player, $saved);
+    }
+
     public function hasPetPermission(Player $player, string $petId) : bool{
         $definition = $this->getPetDefinition($petId);
         if($definition === null){
@@ -128,10 +173,7 @@ final class PetManager{
         if(!(bool) $this->plugin->getConfig()->getNested("settings.auto-summon", true)){
             return;
         }
-        $saved = $this->playerData->get($player->getUniqueId()->toString(), null);
-        if(is_string($saved) && $saved !== ""){
-            $this->summon($player, $saved);
-        }
+        $this->showSelected($player);
     }
 
     public function removeForPlayer(Player $player) : void{
@@ -195,7 +237,10 @@ final class PetManager{
                 $pet->teleport($target);
                 $pet->stopMoving();
             }elseif($distanceSquared > ($followDistance * $followDistance)){
-                $pet->setMotion($delta->normalize()->multiply($followSpeed));
+                $distance = sqrt($distanceSquared);
+                $remainingDistance = max(0.0, $distance - $followDistance);
+                $movementSpeed = min($followSpeed, max(0.04, $remainingDistance * 0.45));
+                $pet->setMotion($delta->normalize()->multiply($movementSpeed));
             }else{
                 $pet->stopMoving();
             }
@@ -210,7 +255,14 @@ final class PetManager{
         }
         $settings = $this->plugin->getConfig()->get("settings", []);
         $durationValue = is_array($settings) ? ($settings["effect-duration-ticks"] ?? 100) : 100;
-        $duration = $this->boundedInt($durationValue, 40, 1200, 100);
+        $refreshValue = is_array($settings) ? ($settings["effect-refresh-ticks"] ?? 40) : 40;
+        $intervalValue = is_array($settings) ? ($settings["follow-interval-ticks"] ?? 2) : 2;
+        $refreshTicks = $this->boundedInt($refreshValue, 10, 200, 40);
+        $followInterval = $this->boundedInt($intervalValue, 1, 10, 2);
+        $duration = max(
+            $this->boundedInt($durationValue, 40, 1200, 100),
+            $refreshTicks + $followInterval + 5
+        );
 
         foreach($effects as $effectName => $effectConfig){
             if(!is_string($effectName) || !isset(self::EFFECTS[$effectName]) || !is_array($effectConfig)){
@@ -236,10 +288,13 @@ final class PetManager{
         $position = $player->getPosition();
         $yaw = $player->getLocation()->getYaw();
         $radians = deg2rad($yaw);
-        $offset = 1.55;
+        $settings = $this->plugin->getConfig()->get("settings", []);
+        $settings = is_array($settings) ? $settings : [];
+        $offset = $this->boundedFloat($settings["follow-offset"] ?? 1.55, 0.75, 3.5, 1.55);
+        $heightOffset = $this->boundedFloat($settings["follow-height-offset"] ?? 0.12, -1.0, 2.0, 0.12);
         return new Location(
             $position->x + sin($radians) * $offset,
-            $position->y + 0.12,
+            $position->y + $heightOffset,
             $position->z - cos($radians) * $offset,
             $player->getWorld(),
             $yaw,
